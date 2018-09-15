@@ -8,4 +8,4 @@ config kibana to get the logs from es cluster main instance
 
 Install ES HQ on local host to monitor ES cluster
 
-Install ANSIBLE  on local VM and use ansible playbook to add instances to the cluster, and use plyabookansible to install filebeat on nginx
+Install ANSIBLE  on local VM and use ansible role to add instances to the cluster, and use role to install filebeat on nginx
