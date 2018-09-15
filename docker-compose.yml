@@ -68,16 +68,27 @@ services:
       - esdata3:/usr/share/elasticsearch/data
     networks:
       - esnet
- 
-   nginx:
-    image: sameersbn/nginx:1.15.3
-    ports:
-    - "80:80"
+    filebeat_nginx:
+    image: mishamx/filebeat-nginx:latest
     volumes:
-     - /srv/docker/nginx/sites-enabled:/etc/nginx/sites-enabled
-    restart: always
+      - /var/log/nginx:/var/log/nginx/
+    environment:
+      LOGSTASH_HOST: "0.0.0.0"
+      LOGSTASH_PORT: "5044"
+      INDEX_NAME: "nginx"
+      ENCODING: "utf-8"
     networks:
-     - esnet
+      - esnet
+ 
+ #  nginx:
+ #   image: sameersbn/nginx:1.15.3
+ #   ports:
+ #   - "80:80"
+ #   volumes:
+ #    - /srv/docker/nginx/sites-enabled:/etc/nginx/sites-enabled
+ #   restart: always
+ #   networks:
+ #   - esnet
 
 volumes:
   esdata1:
