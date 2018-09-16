@@ -10,7 +10,7 @@
     when: ansible_distribution == "Ubuntu" 
 
   - name: APT - Add elastic.co repository 
-    apt_repository: repo="deb https://artifacts.elastic.co/packages/6.x/apt stable main" filename="elastic-5.x" update_cache=yes 
+    apt_repository: repo="deb https://artifacts.elastic.co/packages/6.x/apt stable main" filename="elastic-6.x" update_cache=yes 
     when: ansible_distribution == "Ubuntu" 
 
   - name: FILEBEAT - Install Filebeat 
