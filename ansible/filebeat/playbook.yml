@@ -49,23 +49,7 @@
           paths: 
             - /var/log/nginx/*.log 
           document_type: nginx-access 
-    when: nginxinstalled.rc == 0 
-
-  - name: FILEBEAT - Check if HAProxy is installed 
-    command: dpkg -l haproxy 
-    register: haproxyinstalled 
-
-  - name: FILEBEAT - Configure HAProxy Logging 
-    blockinfile: 
-      dest: /etc/filebeat/filebeat.yml 
-      insertafter: 'filebeat.prospectors:' 
-      marker: "# {mark} -- HAProxy logging configured by Ansible" 
-      block: | 
-        - input_type: log 
-          paths: 
-            - /var/log/haproxy.log 
-          document_type: haproxy 
-    when: haproxyinstalled.rc == 0 
+    when: nginxinstalled.rc == 0
 
   - name: FILEBEAT - Restart filebeat 
     service: name=filebeat state=restarted
