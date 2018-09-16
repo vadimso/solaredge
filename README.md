@@ -12,5 +12,5 @@ Use docker-compose to add elasticsearch instance ( requires less maintanance ist
 
  planned before use ansible to add nodes to es cluster
 
-Install ANSIBLE  on local VM and use ansible playbook to install filebeat on nginx
+Install ANSIBLE  on local VM and use ansible playbook to install filebeat on nginx container
 
