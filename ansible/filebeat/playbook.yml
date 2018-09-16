@@ -1,8 +1,6 @@
 - name: ANSIBLE - Filebeat installation and configuration 
-  hosts: '{{ target }}' 
-  roles: 
-    - yaegashi.blockinfile 
-
+  hosts: nginx
+  
   sudo: yes 
 
   tasks: 
