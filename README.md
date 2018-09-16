@@ -1,5 +1,5 @@
-Instructions to install 
-
+# Instructions to install 
+------------------------------------------------------------------------------------------------------------
 install all components via docker-compose es cluster, logstash, kibana, nginx with filebeat
 
 config logstash to point to one es main  instance to gather logs
