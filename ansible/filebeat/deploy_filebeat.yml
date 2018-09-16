@@ -1,0 +1,10 @@
+---
+
+# Playbook to deploy  Filebeat
+- name: Deploy Filebeat
+  hosts: nginx
+  #become: yes
+  roles:
+    - filebeat
+  tags:
+    - filebeat
